@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Pokédex – Pokémon Společné{% endblock %}
+
+{% block content %}
+    <h1 class="section-title mb-4">Pokédex</h1>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+        {% for p in pokemons %}
+            <div class="col">
+                {% include "components/pokemon_card.html" %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
