@@ -1,11 +1,7 @@
 from models.user import User
 
 uzivatele = [
-    User(1, "Roman", "Fries","123","roman.fries@pokemon","roman_jeGod","admin"),
-    User(2, "Radovan", "Dostal","321","radovan.dostal@pokemon","radapada__"),
-    User(3, "benjamin", "Neten","213","biggest.yahu@pokemon","israel_rules"),
-
-
-
-
+    User(1,"Martin", "Zelený","MM24!", "martin@pokeapp.cz", "martinz", "admin"),
+    User(2,"Sandra","Nadšená", "Heslo123","sandra@pokeapp.cz","SandGirl", "default"),
+    User(3, "Radek", "Havelka", "TajneHeslo","radek@pokeapp.cz", "radekmain")
 ]

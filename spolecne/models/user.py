@@ -1,15 +1,15 @@
 class User:
-    def __init__(self,id, jmeno, primeny,password, email, nickname, role:str = "uzivatel"):
+    def __init__(self,id,jmeno,primeny,email,nickname,role):
         self.id = id
         self.jmeno = jmeno
-        self.primeny = primeny
+        self.primeni = primeny
+        self.password = password
         self.email = email
         self.nickname = nickname
-        self.password = password
         self.role = role
         self.__aktivni = True
     def cele_jmeno(self):
-        return f"{self.jmeno} {self.primeny}"
+        return f"{self.jmeno} {self.primeni}"
 
     def je_admin(self):
         return self.role == "admin"
@@ -21,5 +21,6 @@ class User:
         self.__aktivni = False
 
     def over_heslo(self,heslo):
-        return self.password == heslo
+       return self.password == heslo
+
 
