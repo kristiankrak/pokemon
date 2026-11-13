@@ -1,0 +1,209 @@
+/* ===============================================================
+   ZÁKLADNÍ NASTAVENÍ STRÁNKY
+   =============================================================== */
+
+:root {
+    --pokemon-red: #dc3545;
+    --pokemon-dark-red: #b02a37;
+    --pokemon-blue: #0d6efd;
+    --pokemon-yellow: #ffc107;
+    --pokemon-dark: #212529;
+    --pokemon-light: #f4f7fb;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(255, 193, 7, 0.18), transparent 32%),
+        linear-gradient(135deg, #eef3f8 0%, #dfe7ef 100%);
+    color: var(--pokemon-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ===============================================================
+   HLAVNÍ KONTEJNER STRÁNKY
+   Stránka je zarovnána na střed prohlížeče.
+   =============================================================== */
+
+.page-wrapper {
+    width: min(1180px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: white;
+}
+
+
+/* ===============================================================
+   BANNER
+   =============================================================== */
+
+.site-banner {
+    min-height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: white;
+    background:
+        linear-gradient(rgba(160, 20, 30, 0.90), rgba(220, 53, 69, 0.92)),
+        linear-gradient(135deg, #dc3545, #ff6b6b);
+    border-bottom: 8px solid var(--pokemon-dark);
+}
+
+.banner-content {
+    max-width: 760px;
+}
+
+.site-banner h1 {
+    letter-spacing: 1px;
+}
+
+
+/* ===============================================================
+   JEDNODUCHÝ POKÉBALL MOTIV VYTVOŘENÝ POUZE POMOCÍ CSS
+   =============================================================== */
+
+.pokeball {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border: 6px solid var(--pokemon-dark);
+    border-radius: 50%;
+    background: linear-gradient(
+        to bottom,
+        #ef3340 0%,
+        #ef3340 44%,
+        var(--pokemon-dark) 44%,
+        var(--pokemon-dark) 56%,
+        white 56%,
+        white 100%
+    );
+}
+
+.pokeball span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--pokemon-dark);
+    border-radius: 50%;
+    background: white;
+}
+
+
+/* ===============================================================
+   HLAVNÍ MENU
+   =============================================================== */
+
+.app-navbar {
+    background-color: var(--pokemon-dark);
+}
+
+.app-navbar .nav-link {
+    border-radius: 8px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ===============================================================
+   HLAVNÍ OBSAH
+   =============================================================== */
+
+.main-content {
+    min-height: 470px;
+    background-color: var(--pokemon-light);
+}
+
+.content-card,
+.pokemon-card {
+    border: 1px solid #dee2e6;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(33, 37, 41, 0.08);
+}
+
+.content-card {
+    padding: 32px;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--pokemon-red);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.info-card {
+    border-top: 5px solid var(--pokemon-yellow);
+}
+
+.info-card li {
+    margin-bottom: 8px;
+}
+
+
+/* ===============================================================
+   UKÁZKOVÉ KARTY POKÉMONŮ
+   =============================================================== */
+
+.pokemon-card {
+    position: relative;
+    padding: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(33, 37, 41, 0.12);
+}
+
+.pokemon-number {
+    margin-bottom: 8px;
+    color: #6c757d;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/* ===============================================================
+   PATIČKA
+   =============================================================== */
+
+.site-footer {
+    color: #ced4da;
+    background-color: #171a1d;
+    border-top: 4px solid var(--pokemon-red);
+}
+
+
+/* ===============================================================
+   RESPONZIVNÍ ÚPRAVY
+   =============================================================== */
+
+@media (max-width: 768px) {
+
+    .page-wrapper {
+        width: 100%;
+    }
+
+    .site-banner {
+        min-height: 220px;
+    }
+
+    .content-card {
+        padding: 24px;
+    }
+}

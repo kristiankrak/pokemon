@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %} Přihlášení {% endblock %}
+
+{% block content %}
+<div class="row justify-content-center g-0 py-4">
+    <div class="col-12 col-md-8 col-lg-6">
+
+        <section class="content-card info-card"
+                 aria-labelledby="login-title">
+
+            <!-- Hlavička přihlašovací karty -->
+            <div class="text-center mb-4">
+
+                <!-- Pokéball využívá tvoje stávající CSS -->
+                <div class="pokeball" aria-hidden="true">
+                    <span></span>
+                </div>
+
+                <p class="section-label mb-2">
+                    VÍTEJ ZPĚT, TRENÉRE!
+                </p>
+
+                <h2 id="login-title" class="h3 fw-bold mb-3">
+                    Přihlášení
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Přihlas se ke svému účtu a pokračuj
+                    v objevování světa Pokémonů.
+                </p>
+
+            </div>
+
+            <!-- Chybová zpráva předaná z Flasku -->
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <!-- Formulář se odešle na stejnou URL -->
+            <form method="post">
+
+                {# Token se vloží, pokud je dostupná ochrana Flask-WTF. #}
+                {% if csrf_token is defined %}
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token() }}"
+                    >
+                {% endif %}
+
+                <!-- Uživatelské jméno -->
+                <div class="mb-3">
+                    <label for="username" class="form-label fw-bold">
+                        Uživatelské jméno
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        id="username"
+                        name="username"
+                        placeholder="Zadej své uživatelské jméno"
+                        autocomplete="username"
+                        spellcheck="false"
+                        autocapitalize="none"
+                        value="{{ request.form.get('username', '') }}"
+                        required
+                    >
+                </div>
+
+                <!-- Heslo se při opětovném vykreslení nevyplňuje -->
+                <div class="mb-4">
+                    <label for="password" class="form-label fw-bold">
+                        Heslo
+                    </label>
+
+                    <input
+                        type="password"
+                        class="form-control form-control-lg"
+                        id="password"
+                        name="password"
+                        placeholder="Zadej své heslo"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <!-- Přihlašovací tlačítko -->
+                <div class="d-grid">
+                    <button
+                        type="submit"
+                        class="btn btn-danger btn-lg fw-bold"
+                    >
+                        Přihlásit se
+                    </button>
+                </div>
+
+            </form>
+
+            <div class="text-center border-top mt-4 pt-3">
+                <p class="small text-muted mb-0">
+                    {% if chyba %}
+                        {{chyba}}
+                    {% else %}
+
+                    Tvůj další Pokémon už čeká!
+                    {% endif %}
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
+
+{% endblock %}

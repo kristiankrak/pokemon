@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %} Domů {% endblock %}
+
+{% block content %}
+
+<!-- =============================================================
+     ZAČÁTEK ÚVODNÍHO OBSAHU
+     ============================================================= -->
+<section class="intro-section">
+
+    <div class="row g-4 align-items-stretch">
+
+        <!-- Levý hlavní blok -->
+        <div class="col-lg-8">
+            <div class="content-card h-100">
+
+                <span class="section-label">POKÉDEX PROJEKT</span>
+
+                <h2 class="mt-2">
+                    Vítej v PokéApp
+                </h2>
+
+                <p>
+                    Tato webová aplikace bude postupně zobrazovat informace
+                    o Pokémonech získané z externího API.
+                </p>
+
+                <p class="mb-4">
+                    V dalších lekcích můžeme přidat práci s Blueprinty,
+                    formuláři, filtrováním, detailními stránkami Pokémonů
+                    a dalšími částmi aplikace.
+                </p>
+
+                <a href="#" class="btn btn-primary">
+                    Prozkoumat Pokémony
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Pravý informační blok -->
+        <div class="col-lg-4">
+            <div class="content-card info-card h-100">
+
+                <h3 class="h5">
+                    Co budeme používat?
+                </h3>
+
+                <ul class="mb-0">
+                    <li>Flask</li>
+                    <li>Jinja2</li>
+                    <li>Bootstrap 5</li>
+                    <li>Pokémon API</li>
+                    <li>Blueprinty</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- =============================================================
+     KONEC ÚVODNÍHO OBSAHU
+     ============================================================= -->
+
+
+<!-- =============================================================
+     ZAČÁTEK UKÁZKOVÝCH KARET
+     ============================================================= -->
+<section class="mt-4">
+
+    <h2 class="h4 mb-3">
+        Ukázka budoucího obsahu
+    </h2>
+
+    <div class="row g-3">
+
+        <div class="col-md-4">
+            <div class="pokemon-card h-100">
+                <div class="pokemon-number">#001</div>
+                <h3 class="h5">Bulbasaur</h3>
+                <span class="badge text-bg-success">Grass</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="pokemon-card h-100">
+                <div class="pokemon-number">#004</div>
+                <h3 class="h5">Charmander</h3>
+                <span class="badge text-bg-danger">Fire</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="pokemon-card h-100">
+                <div class="pokemon-number">#007</div>
+                <h3 class="h5">Squirtle</h3>
+                <span class="badge text-bg-primary">Water</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- =============================================================
+     KONEC UKÁZKOVÝCH KARET
+     ============================================================= -->
+
+{% endblock %}
